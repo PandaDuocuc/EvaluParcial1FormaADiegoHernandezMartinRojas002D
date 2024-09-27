@@ -11,6 +11,8 @@ import { DetalleAsignaturaAlumnoComponent } from './detalle-asignatura-alumno/de
 import { DetalleAsignaturaDocenteComponent } from './detalle-asignatura-docente/detalle-asignatura-docente.component';
 import { SharedModule } from "../shared/shared.module";
 import { FormsModule } from '@angular/forms';
+import { DetalleAsignaturaDocente2Component } from './detalle-asignatura-docente2/detalle-asignatura-docente2.component';
+import { DetalleAsignaturaAlumno2Component } from './detalle-asignatura-alumno2/detalle-asignatura-alumno2.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     PrincipalAlumnoComponent,
     RestablecerContrasenaComponent,
     DetalleAsignaturaAlumnoComponent,
-    DetalleAsignaturaDocenteComponent
+    DetalleAsignaturaAlumno2Component,
+    DetalleAsignaturaDocenteComponent,
+    DetalleAsignaturaDocente2Component
   ],
   imports: [
     CommonModule,

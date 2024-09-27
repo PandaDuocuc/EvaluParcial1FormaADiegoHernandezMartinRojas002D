@@ -1,18 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+
+interface Clase {
+  dia: string;
+  horaInicio: string;
+  horaFin: string;
+}
 
 @Component({
   selector: 'app-detalle-asignatura-docente',
   templateUrl: './detalle-asignatura-docente.component.html',
-  styleUrls: ['./detalle-asignatura-docente.component.scss'],
+  styleUrls: ['./detalle-asignatura-docente.component.scss']
 })
-export class DetalleAsignaturaDocenteComponent  implements OnInit {
+export class DetalleAsignaturaDocenteComponent {
+  nombreAsignatura: string = 'Programación de aplicaciones móviles';
+  clases: Clase[] = [
+    { dia: 'Lunes', horaInicio: '13:01', horaFin: '14:20' },
+    { dia: 'Jueves', horaInicio: '16:01', horaFin: '18:10' }
+  ];
+  contenidos: string[] = [
+    'Experiencia de Aprendizaje 1 | Ionic Como Framework Híbrido',
+    'Experiencia de Aprendizaje 2 | Los recursos son infinitos',
+    'Experiencia de Aprendizaje 3 | Es hora de ver el mundo'
+  ];
 
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-    });
+  generarCodigoQR() {
+    // Aquí iría la lógica para generar el código QR
+    console.log('Generando código QR...');
   }
 }

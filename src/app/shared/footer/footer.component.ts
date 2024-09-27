@@ -1,14 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { addIcons } from 'ionicons';
+import { logOutOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent  implements OnInit {
+export class FooterComponent {
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) {
+    addIcons({ logOutOutline });
+  }
 
-  ngOnInit() {}
+  cerrarSesion() {
+    this.authService.logout();
+    this.router.navigate(['/inicio-de-sesion']);
+  }
 
 }

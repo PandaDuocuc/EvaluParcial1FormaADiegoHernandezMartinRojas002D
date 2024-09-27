@@ -13,14 +13,20 @@ interface Asignatura {
 })
 export class PrincipalDocenteComponent {
   asignaturas: Asignatura[] = [
-    { id: 1, nombre: 'Matemáticas' },
-    { id: 2, nombre: 'Lenguaje' },
-    { id: 3, nombre: 'Inglés' },
+    { id: 1, nombre: 'Programación de aplicaciones móviles' },
+    { id: 2, nombre: 'Calidad de software' }
   ];
 
   constructor(private router: Router) {}
 
-  irADetalleAsignatura(asignaturaId: number) {
-    this.router.navigate(['/detalle-asignatura-docente', asignaturaId]);
+  irADetalleAsignatura(asignatura: Asignatura) {
+    if (asignatura.nombre === 'Programación de aplicaciones móviles') {
+      this.router.navigate(['/detalle-asignatura-docente']);
+    } else if (asignatura.nombre === 'Calidad de software') {
+      this.router.navigate(['/detalle-asignatura-docente2']);
+    } else {
+      // En caso de que se añadan más asignaturas en el futuro
+      console.error('Ruta no definida para esta asignatura');
+    }
   }
 }
