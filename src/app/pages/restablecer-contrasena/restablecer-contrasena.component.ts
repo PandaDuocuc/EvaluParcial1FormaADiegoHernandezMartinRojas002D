@@ -1,14 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-restablecer-contrasena',
   templateUrl: './restablecer-contrasena.component.html',
   styleUrls: ['./restablecer-contrasena.component.scss'],
 })
-export class RestablecerContrasenaComponent  implements OnInit {
+export class RestablecerContrasenaComponent {
+  correo: string = '';
 
-  constructor() { }
+  constructor(private alertController: AlertController) {}
 
-  ngOnInit() {}
+  async enviarSolicitud() {
+    const alert = await this.alertController.create({
+      header: 'Solicitud enviada',
+      message: 'Se ha enviado la solicitud de restablecimiento.',
+      buttons: ['OK'],
+    });
 
+    await alert.present();
+  }
 }
+

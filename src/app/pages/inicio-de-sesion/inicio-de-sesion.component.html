@@ -13,6 +13,12 @@
       <ion-input [(ngModel)]="clave"></ion-input>
     </ion-item>
     <ion-button (click)="login(usuario, clave)">Iniciar sesión</ion-button>
+
+    <!-- Botón para restablecer contraseña -->
+    <ion-button fill="clear" color="primary" (click)="irARestablecerContrasena()">
+      ¿Olvidaste tu contraseña?
+    </ion-button>
+
     <!-- Mostrar mensaje de error si el login falla -->
     <ion-text color="danger" *ngIf="loginFailed">
       Usuario o clave incorrectos.

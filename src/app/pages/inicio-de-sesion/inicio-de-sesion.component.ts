@@ -50,4 +50,9 @@ export class InicioDeSesionComponent  implements OnInit {
       }
     });
   }
+
+  // Método para redirigir a la página de restablecer contraseña
+  irARestablecerContrasena() {
+    this.router.navigate(['/restablecer-contrasena']);
+  }
 }
