@@ -8,13 +8,13 @@ import { DetalleAsignaturaDocenteComponent } from './detalle-asignatura-docente/
 import { DetalleAsignaturaAlumnoComponent } from './detalle-asignatura-alumno/detalle-asignatura-alumno.component';
 
 const routes: Routes = [
-  {path: '', component: InicioDeSesionComponent},
-  {path: 'inicio-de-sesion', component: InicioDeSesionComponent},
-  {path: 'restablecer-contrasena', component: RestablecerContrasenaComponent},
-  {path: 'principal-docente', component: PrincipalDocenteComponent},
-  {path: 'principal-alumno', component: PrincipalAlumnoComponent},
-  {path: 'detalle-asignatura-docente', component: DetalleAsignaturaDocenteComponent},
-  {path: 'detalle-asignatura-alumno', component: DetalleAsignaturaAlumnoComponent}
+  { path: '', component: InicioDeSesionComponent },
+  { path: 'inicio-de-sesion', component: InicioDeSesionComponent },
+  { path: 'restablecer-contrasena', component: RestablecerContrasenaComponent },
+  { path: 'principal-docente', component: PrincipalDocenteComponent },
+  { path: 'principal-alumno', component: PrincipalAlumnoComponent },
+  { path: 'detalle-asignatura-docente/:id', component: DetalleAsignaturaDocenteComponent },
+  { path: 'detalle-asignatura-alumno/:id', component: DetalleAsignaturaAlumnoComponent }
 ];
 
 @NgModule({

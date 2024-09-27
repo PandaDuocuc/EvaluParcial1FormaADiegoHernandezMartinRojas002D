@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,6 +9,8 @@ import { PrincipalAlumnoComponent } from './principal-alumno/principal-alumno.co
 import { RestablecerContrasenaComponent } from './restablecer-contrasena/restablecer-contrasena.component';
 import { DetalleAsignaturaAlumnoComponent } from './detalle-asignatura-alumno/detalle-asignatura-alumno.component';
 import { DetalleAsignaturaDocenteComponent } from './detalle-asignatura-docente/detalle-asignatura-docente.component';
+import { SharedModule } from "../shared/shared.module";
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { DetalleAsignaturaDocenteComponent } from './detalle-asignatura-docente/
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
-  ]
+    PagesRoutingModule,
+    SharedModule,
+    IonicModule,
+    FormsModule
+]
 })
 export class PagesModule { }
