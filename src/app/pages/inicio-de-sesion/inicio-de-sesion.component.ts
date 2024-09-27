@@ -25,23 +25,29 @@ export class InicioDeSesionComponent  implements OnInit {
   }
 
   isLoading: boolean = false;
-  async login(usuario: string, clave: string) {
 
+  async login(usuario: string, clave: string) {
     this.isLoading = true; // Activar el estado de carga
     await this.authService.buscarBD4(usuario, clave); // Intentar hacer login
     this.isLoading = false; // Desactivar el estado de carga una vez que la autenticación termine
 
     // Suscribirse al observable para verificar el estado de autenticación
     this.authService.isAuthenticated$.subscribe(isAuthenticated => {
-
       if (isAuthenticated) {
         this.usuario = ''; // Limpiar el campo de usuario
         this.clave = ''; // Limpiar el campo de clave
-        this.router.navigate(['/principal-docente']); // Redirigir al usuario si el login es exitoso
+        this.authService.getUserType().subscribe(userType => {
+          if (userType === 'Docente') {
+            this.router.navigate(['/principal-docente']);
+          } else if (userType === 'Alumno') {
+            this.router.navigate(['/principal-alumno']);
+          } else {
+            console.error('Tipo de usuario desconocido');
+          }
+        });
       } else {
-        this.loginFailed = true; // Mostrar mensaje de error si el login falla
+        this.loginFailed = true;
       }
     });
   }
-
 }
