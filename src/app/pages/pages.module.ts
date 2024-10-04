@@ -13,6 +13,7 @@ import { SharedModule } from "../shared/shared.module";
 import { FormsModule } from '@angular/forms';
 import { DetalleAsignaturaDocente2Component } from './detalle-asignatura-docente2/detalle-asignatura-docente2.component';
 import { DetalleAsignaturaAlumno2Component } from './detalle-asignatura-alumno2/detalle-asignatura-alumno2.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { DetalleAsignaturaAlumno2Component } from './detalle-asignatura-alumno2/
     DetalleAsignaturaAlumnoComponent,
     DetalleAsignaturaAlumno2Component,
     DetalleAsignaturaDocenteComponent,
-    DetalleAsignaturaDocente2Component
+    DetalleAsignaturaDocente2Component,
+    RegistroComponent
   ],
   imports: [
     CommonModule,
